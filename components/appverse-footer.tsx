@@ -15,7 +15,7 @@ interface FooterContent {
 
 const defaultContent: FooterContent = {
   tagline: "Experience 3D animation like never before. We craft cinematic visuals for brands and products.",
-  copyright: "© 2025 — Skitbit International Uk",
+  copyright: "© 2025 —Meta3D labs, All rights reserved",
 }
 
 export function AppverseFooter() {
@@ -23,7 +23,7 @@ export function AppverseFooter() {
 
   useEffect(() => {
     // Load content from localStorage
-    const savedContent = localStorage.getItem("skitbit-content")
+    const savedContent = localStorage.getItem("meta3d-content")
     if (savedContent) {
       try {
         const parsed = JSON.parse(savedContent)
@@ -107,8 +107,8 @@ export function AppverseFooter() {
             {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-lime-300">Skitbit</span>
+                <Image src="/icons/meta3d-white.svg" alt="Meta3D labs logo" width={24} height={24} className="h-6 w-6" />
+                <span className="text-xl font-semibold text-lime-300">Meta3D labs</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>
             </div>

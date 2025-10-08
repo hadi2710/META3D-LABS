@@ -23,7 +23,7 @@ export default function ServicesPage() {
         "Design Optimization",
         "Quality Assurance",
       ],
-      technologies: ["FDM", "SLA", "SLS", "Multi-Material"],
+      technologies: ["PLA", "3D modeling", "CAD software "],
       color: "from-orange-400 to-red-600",
     },
     {
@@ -38,7 +38,8 @@ export default function ServicesPage() {
         "Cloud Deployment",
         "Maintenance & Support",
       ],
-      technologies: ["React", "Next.js", "Node.js", "Python", "AWS", "Vercel"],
+      technologies: ["React", "Next.js", "Node.js", "Python", "AWS", "Vercel","flutter"
+      ],
       color: "from-blue-400 to-purple-600",
     },
     {
