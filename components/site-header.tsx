@@ -9,7 +9,7 @@ export function SiteHeader() {
   const links = [
     { href: "/", label: "Home", icon: Home },
     { href: "/services", label: "Services", icon: Wrench },
-    { href: "/about", label: "About Us", icon: Users },
+  
     { href: "/why-choose-us", label: "Why Choose Us", icon: Award },
     { href: "/portfolio", label: "Portfolio", icon: Briefcase },
     { href: "/contact", label: "Contact", icon: Phone },
