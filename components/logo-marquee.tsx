@@ -2,32 +2,34 @@
 
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export function LogoMarquee() {
   const [pausedRow, setPausedRow] = useState<string | null>(null)
 
-  // Logo data with colors and content
-  const logos = [
-    { name: "Intel", content: "intel", color: "text-neutral-300" },
-    { name: "MongoDB", content: "🟢", color: "text-green-500" },
-    { name: "Skitbit", content: "image", color: "text-neutral-300", image: "/images/skitbit-subtle-logo.png" },
-    { name: "VK", content: "VK", color: "text-white", bg: "bg-blue-500" },
-    { name: "TechCrunch", content: "TC", color: "text-neutral-300" },
-    { name: "MailChimp", content: "🐵", color: "text-yellow-500" },
-    { name: "ESJ", content: "image", color: "text-neutral-300", image: "/images/esj-subtle-logo.png" },
-    { name: "Kickstarter", content: "K", color: "text-white", bg: "bg-green-500" },
+  const designTools = [
+    { name: "Fusion 360", symbol: "🧠", color: "text-cyan-400" },
+    { name: "Altium Designer", symbol: "⚡", color: "text-cyan-300" },
+    { name: "Blender", symbol: "🧊", color: "text-cyan-400" },
+    { name: "SolidWorks", symbol: "⚙️", color: "text-blue-400" },
+    { name: "Onshape", symbol: "O", color: "text-blue-500" },
   ]
 
-  const secondRowLogos = [
-    { name: "StumbleUpon", content: "🔴", color: "text-red-500" },
-    { name: "Microsoft", content: "⊞", color: "text-neutral-400" },
-    { name: "CleanMyMac", content: "🌈", color: "text-purple-400" },
-    { name: "Google", content: "G", color: "text-neutral-300" },
-    { name: "Behance", content: "Be", color: "text-white", bg: "bg-blue-500" },
-    { name: "Apple", content: "🍎", color: "text-neutral-300" },
-    { name: "TransferWise", content: "✓", color: "text-white", bg: "bg-green-500" },
-    { name: "Medium", content: "M", color: "text-neutral-300" },
+  const hardwareSystems = [
+    { name: "Creality Ender 5 S1", symbol: "", color: "text-cyan-400" },
+    { name: "Prusa i3 MK3S+", symbol: "🟦", color: "text-blue-400" },
+    { name: "ESP32", symbol: "🔌", color: "text-cyan-400" },
+    { name: "Arduino", symbol: "∞", color: "text-blue-400" },
+    { name: "Raspberry Pi", symbol: "🍓", color: "text-cyan-300" },
+  ]
+
+  const softwareStack = [
+    { name: "Next.js", symbol: "▲", color: "text-white" },
+    { name: "React", symbol: "⚛️", color: "text-cyan-400" },
+    { name: "Tailwind", symbol: "🌬️", color: "text-cyan-300" },
+    { name: "Node.js", symbol: "🟢", color: "text-cyan-400" },
+    { name: "MongoDB", symbol: "🧩", color: "text-blue-400" },
   ]
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
@@ -36,73 +38,89 @@ export function LogoMarquee() {
       onMouseEnter={() => setPausedRow(rowId)}
       onMouseLeave={() => setPausedRow(null)}
     >
-      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center">
-        {logo.image ? (
-          <div className="relative w-16 h-8 sm:w-20 sm:h-10 lg:w-24 lg:h-12">
-            <Image
-              src={logo.image || "/placeholder.svg"}
-              alt={logo.name}
-              fill
-              className="object-contain opacity-90"
-              sizes="(min-width: 1024px) 128px, (min-width: 640px) 112px, 96px"
-            />
-          </div>
-        ) : logo.bg ? (
-          <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${logo.bg} flex items-center justify-center`}>
-            <span className={`text-sm sm:text-lg font-bold ${logo.color}`}>{logo.content}</span>
-          </div>
-        ) : (
-          <span className={`text-lg sm:text-xl lg:text-2xl font-semibold ${logo.color}`}>{logo.content}</span>
-        )}
+      <div
+        className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl bg-neutral-900/60 border border-cyan-500/20 
+                   backdrop-blur-xl flex flex-col items-center justify-center text-center p-2 
+                   hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+      >
+        <span className={`text-2xl sm:text-3xl ${logo.color}`}>{logo.symbol}</span>
+        <p className="text-xs sm:text-sm text-gray-300 mt-2 font-medium">{logo.name}</p>
       </div>
     </div>
   )
 
   return (
-    <section className="text-white py-16 sm:py-20 overflow-hidden">
+    <section className="text-white py-16 sm:py-20 overflow-hidden bg-transparent">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-left">
-            Meet our <span className="text-lime-300">top-tier</span>
+            From Design to Deployment
             <br />
-            customers
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+              Powered by Cutting-Edge Systems
+            </span>
           </h2>
-          <Button variant="outline" className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced bg-transparent">
-            Learn More
+
+          <Button
+            asChild
+            className="mt-6 sm:mt-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-2 text-black font-semibold
+                       hover:from-cyan-300 hover:to-blue-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]
+                       group transition-all duration-300 ease-in-out"
+          >
+            <Link href="/services" className="flex items-center gap-2">
+              Services
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
 
-        {/* Logo Marquee */}
-        <div className="relative">
-          {/* First Row - Scrolling Right */}
-          <div className="flex overflow-hidden mb-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        {/* Row 1: Design Tools */}
+        <div className="relative mb-6">
+          <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div
-              className={`flex animate-scroll-right whitespace-nowrap ${pausedRow === "first" ? "animation-play-state-paused" : ""}`}
+              className="flex animate-scroll-right whitespace-nowrap"
               style={{
-                animationPlayState: pausedRow === "first" ? "paused" : "running",
+                animationPlayState: pausedRow === "design" ? "paused" : "running",
                 width: "max-content",
               }}
             >
-              {/* Triple the logos for seamless loop */}
-              {[...logos, ...logos, ...logos].map((logo, index) => (
-                <LogoCard key={`first-${index}`} logo={logo} rowId="first" />
+              {[...designTools, ...designTools].map((logo, index) => (
+                <LogoCard key={`design-${index}`} logo={logo} rowId="design" />
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Second Row - Scrolling Left */}
+        {/* Row 2: Hardware Systems */}
+        <div className="relative mb-6">
           <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div
-              className={`flex animate-scroll-left whitespace-nowrap ${pausedRow === "second" ? "animation-play-state-paused" : ""}`}
+              className="flex animate-scroll-left whitespace-nowrap"
               style={{
-                animationPlayState: pausedRow === "second" ? "paused" : "running",
+                animationPlayState: pausedRow === "hardware" ? "paused" : "running",
                 width: "max-content",
               }}
             >
-              {/* Triple the logos for seamless loop */}
-              {[...secondRowLogos, ...secondRowLogos, ...secondRowLogos].map((logo, index) => (
-                <LogoCard key={`second-${index}`} logo={logo} rowId="second" />
+              {[...hardwareSystems, ...hardwareSystems].map((logo, index) => (
+                <LogoCard key={`hardware-${index}`} logo={logo} rowId="hardware" />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Row 3: Software Stack */}
+        <div className="relative">
+          <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div
+              className="flex animate-scroll-right whitespace-nowrap"
+              style={{
+                animationPlayState: pausedRow === "software" ? "paused" : "running",
+                width: "max-content",
+              }}
+            >
+              {[...softwareStack, ...softwareStack].map((logo, index) => (
+                <LogoCard key={`software-${index}`} logo={logo} rowId="software" />
               ))}
             </div>
           </div>

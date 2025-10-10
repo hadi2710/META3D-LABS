@@ -19,18 +19,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 p-4">
       <div className="container mx-auto max-w-4xl">
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-1.5">
-            <div className="h-5 w-5 rounded bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
-              <span className="text-xs font-bold text-white">M3D</span>
-            </div>
-            <span className="font-semibold tracking-wide text-white">Meta 3D Labs</span>
-          </Link>
-
+          
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-cyan-300 transition-colors">
+              <Link
+                key={l.href}
+                href={l.href}
+                className="hover:text-cyan-300 transition-colors"
+              >
                 {l.label}
               </Link>
             ))}
@@ -61,17 +58,12 @@ export function SiteHeader() {
                   <span className="sr-only">Open menu</span>
                 </SimpleButton>
               </SimpleSheetTrigger>
-              <SimpleSheetContent side="right" className="liquid-glass border-gray-800 p-0 w-64 flex flex-col">
-                {/* Brand Header */}
-                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
-                  <div className="h-6 w-6 rounded bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
-                    <span className="text-xs font-bold text-white">M3D</span>
-                  </div>
-                  <span className="font-semibold tracking-wide text-white text-lg">Meta 3D Labs</span>
-                </div>
-
+              <SimpleSheetContent
+                side="right"
+                className="liquid-glass border-gray-800 p-0 w-64 flex flex-col"
+              >
                 {/* Nav Links */}
-                <nav className="flex flex-col gap-1 mt-2 text-gray-200">
+                <nav className="flex flex-col gap-1 mt-4 text-gray-200">
                   {links.map((l) => (
                     <Link
                       key={l.href}
