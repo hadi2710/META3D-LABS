@@ -87,6 +87,7 @@ export default function WhyChooseUsPage() {
     <main className="min-h-[100dvh] text-white bg-gray-900">
       <SiteHeader />
 
+      
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
@@ -99,6 +100,22 @@ export default function WhyChooseUsPage() {
           </p>
         </div>
       </section>
+      {/* Top CTA to About Page */}
+      <section className="py-12 px-4">
+        <div className="container mx-auto max-w-4xl text-center liquid-glass p-8 rounded-2xl border-gray-800">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            Learn More About Meta 3D Labs
+          </h2>
+          <Button
+            asChild
+            className="bg-cyan-400 text-black font-medium rounded-lg px-6 py-3 text-lg
+                       hover:bg-cyan-300 hover:shadow-md hover:scale-[1.02] transition-all"
+          >
+            <Link href="/about">About Us</Link>
+          </Button>
+        </div>
+      </section>
+
 
       {/* Stats Section */}
       <section className="py-16 px-4">
