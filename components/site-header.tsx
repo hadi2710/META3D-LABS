@@ -3,13 +3,13 @@
 import Link from "next/link"
 import { SimpleButton } from "@/components/simple-button"
 import { SimpleSheet, SimpleSheetContent, SimpleSheetTrigger } from "@/components/simple-sheet"
-import { Menu, Home, Wrench, Users, Award, Briefcase, Phone } from "lucide-react"
+import { Menu, Home, Wrench, Award, Briefcase, Phone, Users } from "lucide-react"
 
 export function SiteHeader() {
   const links = [
     { href: "/", label: "Home", icon: Home },
     { href: "/services", label: "Services", icon: Wrench },
-  
+    { href: "/about", label: "About", icon: Users }, // Added About link
     { href: "/why-choose-us", label: "Why Choose Us", icon: Award },
     { href: "/portfolio", label: "Portfolio", icon: Briefcase },
     { href: "/contact", label: "Contact", icon: Phone },
